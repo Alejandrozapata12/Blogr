@@ -1,0 +1,38 @@
+.container-comp{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    margin-left: 1rem;
+   
+}
+
+.cot{
+    margin: 20px;
+}
+
+
+.title-main{
+    text-align: center;
+    font-weight: bold;
+    margin-top: 2rem;
+    color: var(--Gray-600);
+}
+
+.img-main{
+    width: 600px;
+    height: 600px;
+}
+
+.title-par{
+    color: var(--Blue-900);
+    letter-spacing: 2px;
+    margin-bottom: 2rem;
+}
+
+.parraf{
+    color: var(--Gray-600);
+   margin-bottom: 20px;
+    letter-spacing: 3px;
+}
+

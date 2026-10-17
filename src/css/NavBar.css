@@ -1,0 +1,66 @@
+.nav-container{
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 8rem;
+}
+
+.items > a{
+    text-decoration: none;
+    margin: 20px;
+    color: var(--White);
+}
+
+
+.btns-co{
+    display: flex;
+    gap: 2rem;
+}
+
+button{
+    padding: 0.5rem;
+}
+
+.btn-login{
+        color: var(--White);
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        font-weight: bold;
+}
+
+.btn-signUp{
+    border: none;
+    border-radius: 20px;
+    background-color: var(--White);
+    color: var(--Red-500);
+    cursor: pointer;
+    font-weight: bold;
+    padding: 0.7rem;
+}
+
+.toast-construction {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: hsl(237, 23%, 32%);
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  font-family: sans-serif;
+  font-weight: 600;
+  z-index: 1000;
+  animation: fadeInOut 0.3s ease;
+}
+
+@keyframes fadeInOut {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

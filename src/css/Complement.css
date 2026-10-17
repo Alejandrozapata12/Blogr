@@ -1,0 +1,29 @@
+.title-complement{
+    color: var(--White);
+    font-size: 3rem;
+   margin-bottom: 30px;
+}
+
+.par-complement{
+    color: lightgray;
+}
+
+.btn-start{
+    border: none;
+    border-radius: 22px;
+    background-color: var(--White);
+    color: var(--Red-500);
+    font-weight: bold;
+    cursor: pointer;
+    padding: 14px;
+}
+
+.btn-learn-more{
+    border: 1px solid lightgray;
+    background-color: transparent;
+    border-radius: 22px;
+    padding: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    color: var(--White);
+}
