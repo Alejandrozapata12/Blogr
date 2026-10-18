@@ -1,42 +1,127 @@
-.nav-container{
+.nav-container {
     margin-top: 2rem;
     display: flex;
     align-items: center;
-    gap: 8rem;
+    justify-content: space-between;
+    padding: 0 2rem;
+    position: relative;
 }
 
-.items > a{
+.logo img {
+    display: block;
+}
+
+
+.nav-menu-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.items {
+    display: flex;
+    align-items: center;
+}
+
+.items > a {
     text-decoration: none;
-    margin: 20px;
-    color: var(--White);
+    margin: 0 15px;
+    color: var(--White, #fff);
 }
 
-
-.btns-co{
+.btns-co {
     display: flex;
     gap: 2rem;
+    align-items: center;
 }
 
-button{
+button {
     padding: 0.5rem;
 }
 
-.btn-login{
-        color: var(--White);
-        border: none;
-        background-color: transparent;
-        cursor: pointer;
-        font-weight: bold;
-}
-
-.btn-signUp{
+.btn-login {
+    color: var(--White, #fff);
     border: none;
-    border-radius: 20px;
-    background-color: var(--White);
-    color: var(--Red-500);
+    background-color: transparent;
     cursor: pointer;
     font-weight: bold;
-    padding: 0.7rem;
+}
+
+.btn-signUp {
+    border: none;
+    border-radius: 20px;
+    background-color: var(--White, #fff);
+    color: var(--Red-500, hsl(356, 100%, 66%));
+    cursor: pointer;
+    font-weight: bold;
+    padding: 0.7rem 1.5rem;
+}
+
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    z-index: 100;
+}
+
+/* ==========================================
+   DISEÑO RESPONSIVO (Móviles y Tablets)
+   ================================---------- */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Menú flotante estilo tarjeta móvil */
+    .nav-menu-wrapper {
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: 5%;
+        width: 90%;
+        background-color: #ffffff;
+        border-radius: 8px;
+        padding: 2rem 1.5rem;
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+        z-index: 99;
+        gap: 2rem;
+    }
+
+    /* Se muestra cuando se activa el estado en React */
+    .nav-menu-wrapper.active {
+        display: flex;
+    }
+
+    .items {
+        flex-direction: column;
+        width: 100%;
+        gap: 1.5rem;
+    }
+
+    .items > a {
+        color: #2a2b37; 
+        font-weight: 600;
+        margin: 0;
+    }
+
+    .btns-co {
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+        border-top: 1px solid #e6e6e6;
+        padding-top: 1.5rem;
+    }
+
+    .btn-login {
+        color: #2a2b37;
+    }
+
+    .btn-signUp {
+        width: 100%;
+        background: linear-gradient(to right, hsl(13, 100%, 72%), hsl(353, 100%, 62%));
+        color: #fff;
+    }
 }
 
 .toast-construction {

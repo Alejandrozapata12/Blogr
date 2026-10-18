@@ -1,199 +1,22 @@
-/* ==========================================================================
-   MOBILE RESPONSIVE OVERRIDES (max-width: 768px)
-   Sobreescribe estilos de escritorio sin modificar archivos CSS base.
-   ========================================================================== */
+/* src/css/MobileResponsive.css */
+.container-main, .infrastructure-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  text-align: center;
+}
 
-@media (max-width: 768px) {
-  /* --- 1. RESET GENERAL Y CONTENEDORES --- */
-  body {
-    overflow-x: hidden;
+@media (min-width: 992px) {
+  .container-main, .infrastructure-section {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+    padding: 4rem 10%;
   }
 
-  .container,
-  main,
-  header,
-  footer {
-    width: 100% !important;
-    padding-left: 1.25rem !important;
-    padding-right: 1.25rem !important;
-    box-sizing: border-box !important;
-  }
-
-  /* --- 2. HEADER Y NAVBAR --- */
-  .header {
-    background-image: url('../assets/bg-pattern-intro-mobile.svg') !important;
-    background-position: center !important;
-    background-size: cover !important;
-    padding: 2.5rem 1.5rem 6rem 1.5rem !important;
-    text-align: center !important;
-  }
-
-  .navbar {
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    position: relative !important;
-  }
-
-  /* Si usas menú hamburguesa para móvil */
-  .navbar-menu {
-    position: absolute !important;
-    top: 100% !important;
-    left: 0 !important;
-    right: 0 !important;
-    background-color: #ffffff !important;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
-    border-radius: 8px !important;
-    padding: 2rem 1.5rem !important;
-    flex-direction: column !important;
-    gap: 1.5rem !important;
-    text-align: center !important;
-    z-index: 100 !important;
-  }
-
-  .header-hero-title {
-    font-size: 2rem !important;
-    line-height: 1.25 !important;
-  }
-
-  .header-hero-subtitle {
-    font-size: 1rem !important;
-    margin-top: 1rem !important;
-  }
-
-  .header-buttons {
-    flex-direction: column !important;
-    gap: 1rem !important;
-    align-items: center !important;
-    margin-top: 2rem !important;
-  }
-
-  .header-buttons button,
-  .header-buttons a {
-    width: 100% !important;
-    max-width: 240px !important;
-  }
-
-  /* --- 3. MAIN & SECCIÓN EDITOR --- */
-  .main-section,
-  .editor-section {
-    display: flex !important;
-    flex-direction: column-reverse !important;
-    text-align: center !important;
-    padding: 4rem 1rem !important;
-    gap: 2.5rem !important;
-  }
-
-  /* Intercambia la ilustración de desktop a móvil */
-  .editor-illustration,
-  .illustration-desktop {
-    content: url('../assets/illustration-editor-mobile.svg') !important;
-    max-width: 100% !important;
-    height: auto !important;
-  }
-
-  .main-text-content,
-  .section-text {
-    text-align: center !important;
-    padding: 0 !important;
-  }
-
-  .main-text-content h2,
-  .section-text h2 {
-    font-size: 1.6rem !important;
-  }
-
-  .main-text-content p,
-  .section-text p {
-    font-size: 0.95rem !important;
-    line-height: 1.6 !important;
-  }
-
-  /* --- 4. INFRASTRUCTURE SECTION --- */
-  .infrastructure {
-    display: flex !important;
-    flex-direction: column !important;
-    background-image: url('../assets/bg-pattern-circles.svg') !important;
-    background-position: center top -180px !important;
-    background-size: 160% !important;
-    background-repeat: no-repeat !important;
-    margin-top: 12rem !important;
-    padding: 12rem 1.5rem 4rem 1.5rem !important;
-    border-radius: 0 60px 0 60px !important;
-    text-align: center !important;
-    position: relative !important;
-  }
-
-  .infrastructure-phones-img,
-  .phones-illustration {
-    position: absolute !important;
-    top: -180px !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    width: 280px !important;
-    height: auto !important;
-  }
-
-  .infrastructure-content {
-    margin-top: 2rem !important;
-    text-align: center !important;
-  }
-
-  /* --- 5. COMPLEMENT & OTHERS (LAPTOP SECTION) --- */
-  .complement-section,
-  .others-section {
-    display: flex !important;
-    flex-direction: column !important;
-    text-align: center !important;
-    padding: 4rem 1rem !important;
-    gap: 2.5rem !important;
-  }
-
-  .laptop-illustration,
-  .others-illustration {
-    content: url('../assets/illustration-laptop-mobile.svg') !important;
-    max-width: 100% !important;
-    height: auto !important;
-  }
-
-  /* --- 6. FOOTER --- */
-  .footer {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
-    padding: 3rem 1.5rem !important;
-    gap: 2.5rem !important;
-    border-radius: 0 60px 0 0 !important;
-  }
-
-  .footer-logo {
-    margin-bottom: 1rem !important;
-  }
-
-  .footer-columns,
-  .footer-links-group {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 2rem !important;
-    width: 100% !important;
-  }
-
-  .footer-column ul {
-    padding: 0 !important;
-    list-style: none !important;
-  }
-
-  .footer-column li {
-    margin-bottom: 0.5rem !important;
-  }
-
-  /* --- 7. SCROLL TO TOP BUTTON (UP.JSX) --- */
-  .scroll-to-top,
-  .up-button {
-    bottom: 20px !important;
-    right: 20px !important;
-    width: 42px !important;
-    height: 42px !important;
+  .container-main > *, .infrastructure-section > * {
+    flex: 1;
+    margin: 0 1rem;
   }
 }
