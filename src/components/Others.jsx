@@ -1,12 +1,15 @@
-import React from 'react';
-import '../css/Other.css';
-import laptopImg from '../assets/illustration-laptop-desktop.svg'; 
+import '../css/Main.css';
+import laptopDesktop from '../assets/illustration-laptop-desktop.svg';
+import laptopMobile from '../assets/illustration-laptop-mobile.svg';
 
 function Others() {
   return (
     <div className='container-main'>
       <div className="container-comp">
-        <img src={laptopImg} alt="Laptop Illustration" className='img-main' />
+        <picture>
+          <source media="(min-width: 992px)" srcSet={laptopDesktop} />
+          <img src={laptopMobile} alt="Laptop Illustration" className='img-main' />
+        </picture>
         <div className="cot">
           <h2 className="title-par">Free, open, simple</h2>
           <p className="parraf">

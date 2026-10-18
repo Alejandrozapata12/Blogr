@@ -1,110 +1,94 @@
 .container-infra {
   position: relative;
-  margin-top: 140px; 
-  margin-bottom: 100px;
+  margin-top: 140px;
+  margin-bottom: 60px;
 }
 
+/*
+  Los círculos van como fondo del propio card: así se recortan con sus
+  esquinas redondeadas y los teléfonos pueden sobresalir por arriba
+  (overflow: visible) sin que se corten.
+*/
 .Art {
   display: flex;
   flex-direction: column;
-  background: hsl(237, 23%, 32%);
-  background-image: radial-gradient(circle at top left, hsl(237, 17%, 21%), hsl(237, 23%, 32%));
+  background-color: hsl(237, 23%, 32%);
+  background-image:
+    url("../assets/bg-pattern-circles.svg"),
+    radial-gradient(circle at top left, hsl(237, 17%, 21%), hsl(237, 23%, 32%));
+  background-repeat: no-repeat, no-repeat;
+  background-size: 520px auto, auto;
+  background-position: center -240px, center;
   border-top-right-radius: 100px;
   border-bottom-left-radius: 100px;
-  padding: 60px 40px;
+  padding: 0 1.5rem 3.5rem;
   color: white;
   position: relative;
-  overflow: hidden; 
 }
 
-
+/* Móvil: los teléfonos sobresalen 140px por encima del card */
 .image-container {
-  position: relative;
-  width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 250px;
-  margin-top: -140px; 
+  width: 100%;
+  margin-top: -140px;
+  margin-bottom: 2.5rem;
 }
-
-
-.radius-img {
-  position: absolute;
-  width: 550px;
-  height: 550px;
-  max-width: none;
-  z-index: 1; 
-  opacity: 0.9;
-}
-
 
 .img-cell {
-  position: absolute;
-  width: 380px;
-  max-width: 90%;
+  width: min(300px, 80%);
   height: auto;
-  z-index: 2; 
 }
 
 .text-content {
-  text-align: left;
-  z-index: 2;
+  text-align: center;
 }
 
 .title-Art {
-  font-size: 1.8rem;
-  margin-bottom: 20px;
+  font-size: 1.6rem;
+  margin-bottom: 1.25rem;
 }
 
 .par-infra {
   line-height: 1.7;
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
+@media (min-width: 992px) {
+  .container-infra {
+    margin-bottom: 100px;
+  }
 
-@media (min-width: 900px) {
   .Art {
     display: grid;
-    grid-template-columns: 1fr 1fr; 
+    grid-template-columns: 1fr 1fr;
     align-items: center;
     padding: 80px 60px;
     min-height: 340px;
-    overflow: visible; 
+    background-size: 700px auto, auto;
+    background-position: -140px center, center;
   }
 
+  /* Los teléfonos salen del card por arriba y por abajo, centrados en la columna izquierda */
   .image-container {
-    position: absolute;
-    left: -40px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 500px;
-    height: 500px;
-    margin-top: 0;
-  }
-
-  .radius-img {
-    width: 700px;
-    height: 700px;
-   
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    overflow: hidden;
+    grid-column: 1;
+    margin: 0;
+    justify-content: center;
+    align-items: flex-start;
+    align-self: center;
+    /* altura 0 para no empujar el alto del card; la imagen se desplaza con translate */
+    height: 0;
+    overflow: visible;
   }
 
   .img-cell {
-    width: 450px;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    width: min(450px, 100%);
+    flex: none;
+    transform: translateY(-50%);
   }
 
   .text-content {
-    grid-column: 2; 
-  }
-
-  .title-Art {
-    margin-top: 0; 
+    grid-column: 2;
+    text-align: left;
   }
 }

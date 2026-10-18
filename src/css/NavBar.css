@@ -3,7 +3,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 2rem;
+    padding: 0 1.5rem;
     position: relative;
 }
 
@@ -11,11 +11,14 @@
     display: block;
 }
 
-
+/* Desktop: enlaces a la izquierda del grupo, botones a la derecha */
 .nav-menu-wrapper {
     display: flex;
     align-items: center;
-    gap: 4rem;
+    justify-content: space-between;
+    flex: 1;
+    margin-left: 3rem;
+    gap: 2rem;
 }
 
 .items {
@@ -31,7 +34,7 @@
 
 .btns-co {
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
     align-items: center;
 }
 
@@ -57,16 +60,25 @@ button {
     padding: 0.7rem 1.5rem;
 }
 
-
 .menu-toggle {
     display: none;
     cursor: pointer;
     z-index: 100;
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    margin-right: -0.5rem;
+}
+
+@media (min-width: 769px) {
+    .nav-container {
+        padding: 0 2rem;
+    }
 }
 
 /* ==========================================
    DISEÑO RESPONSIVO (Móviles y Tablets)
-   ================================---------- */
+   ========================================== */
 @media (max-width: 768px) {
     .menu-toggle {
         display: block;
@@ -74,12 +86,16 @@ button {
 
     /* Menú flotante estilo tarjeta móvil */
     .nav-menu-wrapper {
-        display: none; 
+        display: none;
+        flex: none;
         flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
         position: absolute;
-        top: 80px;
-        left: 5%;
-        width: 90%;
+        top: calc(100% + 1.5rem);
+        left: 1.5rem;
+        right: 1.5rem;
+        margin-left: 0;
         background-color: #ffffff;
         border-radius: 8px;
         padding: 2rem 1.5rem;
@@ -100,9 +116,10 @@ button {
     }
 
     .items > a {
-        color: #2a2b37; 
+        color: #2a2b37;
         font-weight: 600;
         margin: 0;
+        text-align: center;
     }
 
     .btns-co {

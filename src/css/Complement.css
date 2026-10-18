@@ -1,11 +1,15 @@
 .title-complement{
     color: var(--White);
-    font-size: 3rem;
-   margin-bottom: 30px;
+    font-size: clamp(2rem, 8vw, 3rem);
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
 }
 
 .par-complement{
     color: lightgray;
+    line-height: 1.6;
+    max-width: 46ch;
+    margin: 0 auto;
 }
 
 .btn-start{
@@ -15,14 +19,14 @@
     color: var(--Red-500);
     font-weight: bold;
     cursor: pointer;
-    padding: 14px;
+    padding: 14px 22px;
 }
 
 .btn-learn-more{
     border: 1px solid lightgray;
     background-color: transparent;
     border-radius: 22px;
-    padding: 14px;
+    padding: 14px 22px;
     font-weight: bold;
     cursor: pointer;
     color: var(--White);

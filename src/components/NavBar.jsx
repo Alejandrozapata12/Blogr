@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import logoSrc from '../assets/logo.svg';
 import hamburgerIcon from '../assets/icon-hamburger.svg';
 import closeIcon from '../assets/icon-close.svg';
@@ -12,7 +12,7 @@ function NavBar() {
     e.preventDefault();
     setShowToast(true);
     setIsOpen(false); // Cierra el menú al hacer clic en una opción en móvil
-    
+
     setTimeout(() => {
       setShowToast(false);
     }, 3000);
@@ -30,14 +30,20 @@ function NavBar() {
         </span>
 
         {/* Botón hamburguesa para móviles */}
-        <div className="menu-toggle" onClick={toggleMenu}>
-          <img src={isOpen ? closeIcon : hamburgerIcon} alt="Menu Toggle" />
-        </div>
+        <button
+          type="button"
+          className="menu-toggle"
+          onClick={toggleMenu}
+          aria-label={isOpen ? 'Cerrar menú' : 'Abrir menú'}
+          aria-expanded={isOpen}
+        >
+          <img src={isOpen ? closeIcon : hamburgerIcon} alt="" />
+        </button>
 
         {/* Contenedor de enlaces y botones adaptado */}
         <div className={`nav-menu-wrapper ${isOpen ? 'active' : ''}`}>
           <div className="items">
-            <a href="#" onClick={handleClick}>Product <span></span></a>
+            <a href="#" onClick={handleClick}>Product</a>
             <a href="#" onClick={handleClick}>Company</a>
             <a href="#" onClick={handleClick}>Connect</a>
           </div>

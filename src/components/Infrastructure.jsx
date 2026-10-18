@@ -1,14 +1,11 @@
-import React from 'react';
 import '../css/Infrastructure.css';
 import cellPhone from '../assets/illustration-phones.svg';
-import radius from '../assets/bg-pattern-circles.svg';
 
 function Infrastructure() {
   return (
     <div className='container-infra'>
         <section className="Art">
             <div className="image-container">
-                <img src={radius} alt="radius" className='radius-img' />
                 <img src={cellPhone} alt="cellPhone" className='img-cell' />
             </div>
             <div className="text-content">

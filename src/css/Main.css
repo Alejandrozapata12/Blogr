@@ -1,33 +1,103 @@
-.container-comp{
+/* Estilos compartidos por Main.jsx y Others.jsx (antes duplicados en Main.css, Other.css y MobileResponsive.css) */
+
+.container-main {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    gap: 2rem;
-    margin-left: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
 }
 
-
-.title-main{
+.title-main {
     text-align: center;
     font-weight: bold;
-    margin-top: 2rem;
+    font-size: clamp(1.6rem, 5vw, 2.2rem);
+    margin-bottom: 2.5rem;
     color: var(--Gray-600);
 }
 
-.img-main{
-    width: 590px;
-    height: 590px;
+/* Móvil: una columna, centrada */
+.container-comp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
 }
 
-.title-par{
+.cot {
+    text-align: center;
+    max-width: 60ch;
+}
+
+.container-comp picture {
+    display: block;
+    width: 100%;
+    max-width: 420px;
+}
+
+.img-main {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+.title-par {
     color: var(--Blue-900);
-    letter-spacing: 2px;
-    margin-bottom: 2rem;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
 }
 
-.parraf{
+.parraf {
     color: var(--Gray-600);
-   margin-bottom: 20px;
-    letter-spacing: 3px;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
 }
 
+/* En móvil la imagen de Main va arriba del texto, como en Others */
+.img-first-mobile picture {
+    order: -1;
+}
+
+/* Desktop: dos columnas */
+@media (min-width: 992px) {
+    .container-main {
+        padding: 4rem 5%;
+    }
+
+    .container-comp {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 4rem;
+    }
+
+    .container-comp > .cot,
+    .container-comp > picture {
+        flex: 1 1 50%;
+        min-width: 0;
+    }
+
+    .cot {
+        text-align: left;
+        max-width: none;
+    }
+
+    .container-comp picture {
+        max-width: 590px;
+    }
+
+    .img-first-mobile picture {
+        order: 0;
+    }
+
+    .title-par {
+        font-size: 1.6rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .parraf {
+        letter-spacing: 0.5px;
+    }
+}
